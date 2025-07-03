@@ -69,41 +69,41 @@ async def predict(features: Features):
 
 
 
-# ─── RECOMMENDATION ENDPOINT ────────────────────────────────────────────────
-class RecoRequest(BaseModel):
-    product_name: str = Field(..., example="MyBlush Women Top")
-    top_n:        int = Field(5, example=5, description="How many to recommend")
+# # ─── RECOMMENDATION ENDPOINT ────────────────────────────────────────────────
+# class RecoRequest(BaseModel):
+#     product_name: str = Field(..., example="MyBlush Women Top")
+#     top_n:        int = Field(5, example=5, description="How many to recommend")
 
     
-@app.post("/recommend")
-async def recommend(req: RecoRequest):
-    raw = req.product_name.strip().lower()
+# @app.post("/recommend")
+# async def recommend(req: RecoRequest):
+#     raw = req.product_name.strip().lower()
 
-    # 1) exact match
-    if raw in name_to_index:
-        key = raw
-    else:
-        labels = name_to_index.index  # these are your lowercase product names
+#     # 1) exact match
+#     if raw in name_to_index:
+#         key = raw
+#     else:
+#         labels = name_to_index.index  # these are your lowercase product names
 
-        # 2) prefix match
-        prefixes = [n for n in labels if n.startswith(raw)]
-        if prefixes:
-            key = prefixes[0]
-        else:
-            # 3) fuzzy match
-            close = get_close_matches(raw, labels, n=1, cutoff=0.5)
-            if close:
-                key = close[0]
-            else:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Product '{req.product_name}' not found in catalog."
-                )
+#         # 2) prefix match
+#         prefixes = [n for n in labels if n.startswith(raw)]
+#         if prefixes:
+#             key = prefixes[0]
+#         else:
+#             # 3) fuzzy match
+#             close = get_close_matches(raw, labels, n=1, cutoff=0.5)
+#             if close:
+#                 key = close[0]
+#             else:
+#                 raise HTTPException(
+#                     status_code=404,
+#                     detail=f"Product '{req.product_name}' not found in catalog."
+#                 )
 
-    idx = name_to_index[key]
-    sims = list(enumerate(sim_mat[idx]))
-    topn = sorted(sims, key=lambda x: x[1], reverse=True)[1 : req.top_n + 1]
-    rec_idxs = [i for i, _ in topn]
+#     idx = name_to_index[key]
+#     sims = list(enumerate(sim_mat[idx]))
+#     topn = sorted(sims, key=lambda x: x[1], reverse=True)[1 : req.top_n + 1]
+#     rec_idxs = [i for i, _ in topn]
 
-    subset = df.iloc[rec_idxs][["_id", "productImage", "description"]]
-    return {"recommendations": subset.to_dict(orient="records")}
+#     subset = df.iloc[rec_idxs][["_id", "productImage", "description"]]
+#     return {"recommendations": subset.to_dict(orient="records")}
