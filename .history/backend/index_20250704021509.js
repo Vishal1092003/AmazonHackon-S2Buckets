@@ -27,7 +27,7 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 
 const url = process.env.mongo_uri;
 app.get("/", (req, res) => {
-  res.send(`This app started at  ${PORT} and database uri is ${url}`);
+  res.send(`This app started at  ${PORT} and database uri is ${url} `);
 });
 
 app.listen(PORT,(req,res)=>{
