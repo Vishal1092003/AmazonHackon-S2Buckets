@@ -26,7 +26,7 @@ const orders = require('./routes/orderRoutes');
 const dashboardRoutes = require("./routes/dashboardRoutes");
 
 app.get("/", (req, res) => {
-  res.send(`This app started at  ${PORT}`);
+  res.send(`app started at  ${PORT}`);
 });
 
 app.listen(PORT,(req,res)=>{
