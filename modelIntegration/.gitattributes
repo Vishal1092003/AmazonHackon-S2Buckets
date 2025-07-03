@@ -1,1 +1,2 @@
 modelIntegration/recommendation_bundle.pkl filter=lfs diff=lfs merge=lfs -text
+modelIntegration/grade_predictor.pkl filter=lfs diff=lfs merge=lfs -text
