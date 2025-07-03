@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT,(req,res)=>{
-  console.log(`app started at ${PORT} and database uri is ${url}`)
+    console.log(`app started at ${PORT} `)
 })
 
 
