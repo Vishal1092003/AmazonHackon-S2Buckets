@@ -27,7 +27,9 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 
 const url = process.env.mongo_uri;
 app.get("/", (req, res) => {
-  res.send(`This app started at  ${PORT} and database uri is ${url}`);
+  res.send(`This app started at  ${PORT} 
+     database uri is ${url} .This Backend is deployed in vercel by Vishal kumar . Each time you route here Vishal will get to know about Your session .
+     J `);
 });
 
 app.listen(PORT,(req,res)=>{
