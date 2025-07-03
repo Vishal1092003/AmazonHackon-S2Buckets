@@ -105,5 +105,5 @@ async def predict(features: Features):
 #     topn = sorted(sims, key=lambda x: x[1], reverse=True)[1 : req.top_n + 1]
 #     rec_idxs = [i for i, _ in topn]
 
-    subset = df.iloc[rec_idxs][["_id", "productImage", "description"]]
-    return {"recommendations": subset.to_dict(orient="records")}
+    # subset = df.iloc[rec_idxs][["_id", "productImage", "description"]]
+    # return {"recommendations": subset.to_dict(orient="records")}
