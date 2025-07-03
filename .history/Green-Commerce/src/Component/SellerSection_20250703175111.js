@@ -88,7 +88,7 @@ export default function SellerSection() {
     };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/predict", {
+      const res = await fetch("https://amazon-hackon-s2-buckets.vercel.app/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -148,7 +148,7 @@ export default function SellerSection() {
             payload.append("grade", modalGrade);
           }
     try {
-      const res = await fetch("https://amazon-hackon-s2-buckets.vercel.app/addproduct", {
+      const res = await fetch("http://127.0.0.1:8080/addproduct", {
         method: "POST",
         body: payload,
       });

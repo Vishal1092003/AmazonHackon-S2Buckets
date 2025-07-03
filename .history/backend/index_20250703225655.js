@@ -12,7 +12,6 @@ app.use(express.json());
 //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 //   allowedHeaders: ['Content-Type', 'Authorization'],
 // }));
-app.use(cors({ origin: '*' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const PORT = process.env.PORT || 8080;

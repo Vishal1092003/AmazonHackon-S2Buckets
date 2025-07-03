@@ -11,7 +11,7 @@ function Signup() {
     const [password, setpassword] = useState("");
 
     const submit = () => {
-        const resposne = fetch(`https://amazon-hackon-s2-buckets.vercel.app/signup`, {
+        const resposne = fetch(`https://amazon-hackon-s2-buckets.vercel.app//signup`, {
             "method": "post",
             headers: {
                 "Content-Type": "Application/json"
