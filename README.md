@@ -313,6 +313,11 @@ This project is licensed under the MIT License
  Built with 💚 for sustainability!
 
 
+
+## deployment:
+        •	backend : https://amazon-hackon-s2-buckets.vercel.app/
+	•       frontend:   
+
  
 
 
