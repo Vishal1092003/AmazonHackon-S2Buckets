@@ -25,16 +25,14 @@ const product = require('./routes/ProductManagement');
 const orders = require('./routes/orderRoutes');
 const dashboardRoutes = require("./routes/dashboardRoutes");
 
-const url = process.env.mongo_uri;
 app.get("/", (req, res) => {
-  res.send(`This app started at  ${PORT} and database uri is ${url}`);
+  res.send(`This app started at  ${PORT}`);
 });
 
 app.listen(PORT,(req,res)=>{
-  console.log(`app started at ${PORT} and database uri is ${url}`)
+    console.log(`app started at ${PORT}`)
 })
-
-
+const url = process.env.mongo_uri;
 app.use('/group', groupRoutes);
 app.use('/',login);
 app.use('/', signup);
