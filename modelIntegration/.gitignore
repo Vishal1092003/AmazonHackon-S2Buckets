@@ -1,7 +1,7 @@
 # # Ignore Python virtual environments
 myenv/
 
-/recommendation_bundle.pkl
+recommendation_bundle.pkl
 
 # # Ignore compiled Python bytecode
 __pycache__/
