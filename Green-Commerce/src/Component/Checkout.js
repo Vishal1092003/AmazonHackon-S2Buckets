@@ -253,7 +253,7 @@ function Checkout() {
     };
 
     try {
-      await axios.post('http://localhost:8080/place-order', orderPayload);
+      await axios.post('https://amazon-hackon-s2-buckets.vercel.app/place-order', orderPayload);
 
       // ✅ Add to global order history and clear basket
       dispatch({ type: 'ADD_TO_HISTORY', items: basket });

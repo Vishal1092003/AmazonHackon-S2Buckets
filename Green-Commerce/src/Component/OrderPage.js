@@ -17,9 +17,9 @@ const OrderPage = ({ cartItems = [] }) => {
   const handleStartGroupOrder = () => {
     setShowGroupModal(true);
   };
-
+   
   const handlePlaceOrder = async () => {
-    const email = localStorage.getItem("email");
+  const email = localStorage.getItem("email");
   
     if (!email) {
       alert("Please log in before placing an order.");
@@ -36,7 +36,7 @@ const OrderPage = ({ cartItems = [] }) => {
   
     try {
       // 🔄 Send order to backend
-      await axios.post("http://localhost:8080/order/place-order", orderData);
+      await axios.post("https://amazon-hackon-s2-buckets.vercel.app/order/place-order", orderData);
   
       // ✅ Add to local history
       dispatch({ type: "ADD_TO_HISTORY", items: cartItems });

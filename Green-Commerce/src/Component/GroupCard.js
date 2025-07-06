@@ -16,7 +16,7 @@ const GroupCard = ({ group, currentUser, onLeave }) => {
     if (!window.confirm("Are you sure you want to leave this group?")) return;
 
     try {
-      await axios.post(`http://localhost:8080/group/leave/${group._id}`, {
+      await axios.post(`https://amazon-hackon-s2-buckets.vercel.app/group/leave/${group._id}`, {
         user
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem("jwtToken")}` }

@@ -101,7 +101,7 @@ const GroupOrderSetup = () => {
 
     try {
       // Create group
-      await axios.post('http://localhost:8080/group/create', newGroup, {
+      await axios.post('https://amazon-hackon-s2-buckets.vercel.app/group/create', newGroup, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -124,7 +124,7 @@ const GroupOrderSetup = () => {
           address: locationName,
           deliveryDate: deadline
         };
-        await axios.post('http://localhost:8080/place-order', orderPayload);
+        await axios.post('https://amazon-hackon-s2-buckets.vercel.app/place-order', orderPayload);
       } catch (orderErr) {
         console.error('Error saving order:', orderErr);
       }
@@ -133,7 +133,7 @@ const GroupOrderSetup = () => {
       dispatch({ type: "CLEAR_BASKET" });
 
       // Fetch updated group count
-      const groupRes = await axios.get('http://localhost:8080/group/my-groups', {
+      const groupRes = await axios.get('https://amazon-hackon-s2-buckets.vercel.app/group/my-groups', {
         headers: {
           Authorization: `Bearer ${token}`
         }

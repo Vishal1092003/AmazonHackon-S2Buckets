@@ -29,7 +29,7 @@ const NearbyGroups = () => {
 
         try {
           const res = await axios.get(
-            `http://localhost:8080/group/nearby?lat=${latitude}&lng=${longitude}&radius=${radiusKm}`,
+            `https://amazon-hackon-s2-buckets.vercel.app/group/nearby?lat=${latitude}&lng=${longitude}&radius=${radiusKm}`,
             {
               headers: { Authorization: `Bearer ${token}` }
             }
@@ -50,7 +50,7 @@ const NearbyGroups = () => {
     try {
       // Join the group
       await axios.post(
-        `http://localhost:8080/group/join/${groupId}`,
+        `https://amazon-hackon-s2-buckets.vercel.app/group/join/${groupId}`,
         { user: email },
         {
           headers: {
@@ -61,7 +61,7 @@ const NearbyGroups = () => {
       );
 
       // ✅ Fetch group data to extract cart items for the order
-      const groupRes = await axios.get(`http://localhost:8080/group/${groupId}`);
+      const groupRes = await axios.get(`https://amazon-hackon-s2-buckets.vercel.app/group/${groupId}`);
       const group = groupRes.data;
 
       // ✅ Prepare order structure based on your schema
@@ -86,7 +86,7 @@ const NearbyGroups = () => {
       };
 
       // ✅ Send to Order DB
-      await axios.post("http://localhost:8080/place-order", orderPayload);
+      await axios.post("https://amazon-hackon-s2-buckets.vercel.app/place-order", orderPayload);
 
       // ✅ Celebrate
       confetti({
