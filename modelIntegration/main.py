@@ -14,8 +14,8 @@ rf_model     = bundle["model"]
 
 scaler       = bundle["scaler"]
 label_enc    = bundle["encoder"]
-feature_cols = bundle["features"]
 
+feature_cols = bundle["features"]
 
 # ─── LOAD RECOMMENDER BUNDLE ───────────────────────────────────────────────────
 # with open("recommendation_bundle.pkl", "rb") as f:
