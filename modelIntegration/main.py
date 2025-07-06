@@ -11,7 +11,7 @@ with open("grade_predictor.pkl", "rb") as f:
     bundle = pickle.load(f)
 
 rf_model     = bundle["model"]      
-   
+
 scaler       = bundle["scaler"]
 label_enc    = bundle["encoder"]
 feature_cols = bundle["features"]
@@ -24,6 +24,7 @@ feature_cols = bundle["features"]
 # df            = pd.DataFrame.from_records(reco["records"])
 # name_to_index = reco["name_to_index"]
 # sim_mat       = reco["sim_mat"]
+
 app = FastAPI(title="Eco-Grade Predictor")
 
 # ─── CORS ─────────────────────────────────────────────────────────────────────
