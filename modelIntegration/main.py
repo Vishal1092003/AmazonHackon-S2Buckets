@@ -17,12 +17,13 @@ feature_cols = bundle["features"]
 
 
 # ─── LOAD RECOMMENDER BUNDLE ───────────────────────────────────────────────────
-with open("recommendation_bundle.pkl", "rb") as f:
-    reco = pickle.load(f)
-# notice we match the keys you actually used:
-df            = pd.DataFrame.from_records(reco["records"])
-name_to_index = reco["name_to_index"]
-sim_mat       = reco["sim_mat"]
+# with open("recommendation_bundle.pkl", "rb") as f:
+#     reco = pickle.load(f)
+# # notice we match the keys you actually used:
+# df            = pd.DataFrame.from_records(reco["records"])
+# name_to_index = reco["name_to_index"]
+# sim_mat       = reco["sim_mat"]
+
 app = FastAPI(title="Eco-Grade Predictor")
 
 # ─── CORS ─────────────────────────────────────────────────────────────────────
