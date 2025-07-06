@@ -10,7 +10,8 @@ from difflib import get_close_matches
 with open("grade_predictor.pkl", "rb") as f:
     bundle = pickle.load(f)
 
-rf_model     = bundle["model"]         
+rf_model     = bundle["model"]      
+   
 scaler       = bundle["scaler"]
 label_enc    = bundle["encoder"]
 feature_cols = bundle["features"]
