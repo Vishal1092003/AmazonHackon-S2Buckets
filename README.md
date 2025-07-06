@@ -319,5 +319,15 @@ This project is licensed under the MIT License
 	•       frontend:   
 
  
+ 
 
+
+
+## Fast api commonds for easy setup
+• python -m venv myenv
+• myenv\Scripts\activate
+• pip install fastapi uvicorn pydantic
+• pip install pandas numpy
+• pip install scikit-learn==1.6.1
+• uvicorn main:app --reload
 
