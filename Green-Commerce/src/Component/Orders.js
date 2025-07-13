@@ -9,7 +9,7 @@ export default function MyOrders() {
   useEffect(() => {
     async function fetchOrders() {
       try {
-        const res = await axios.get(`https://amazon-hackon-s2-buckets.vercel.app/my-orders?email=${email}`);
+        const res = await axios.get(`http://localhost:8080/my-orders?email=${email}`);
         setOrders(res.data);
       } catch (err) {
         console.error("Failed to load orders:", err);

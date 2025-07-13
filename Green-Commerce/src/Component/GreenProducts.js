@@ -236,7 +236,7 @@ export default function GreenProducts({ description, topN = 5 }) {
         // define an async fetcher
         const fetchProducts = async () => {
             try {
-                const res = await fetch("https://amazon-hackon-s2-buckets.vercel.app/getproducts");
+                const res = await fetch("http://localhost:8080/getproducts");
                 if (!res.ok) {
                     throw new Error(`Server responded ${res.status}`);
                 }

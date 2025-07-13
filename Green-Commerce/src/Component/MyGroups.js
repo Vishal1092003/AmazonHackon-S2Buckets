@@ -14,7 +14,7 @@ const MyGroups = () => {
       return navigate("/login");
     }
 
-    axios.get('https://amazon-hackon-s2-buckets.vercel.app/group/my-groups', {
+    axios.get('http://localhost:8080/group/my-groups', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`
       }
