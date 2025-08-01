@@ -196,7 +196,7 @@ export default function GreenProducts({ description, topN = 5 }) {
         description,
         recs,
     });
-
+     
     useEffect(() => {
         if (!description) return;            // nothing to do until user searches
         setLoading(true);

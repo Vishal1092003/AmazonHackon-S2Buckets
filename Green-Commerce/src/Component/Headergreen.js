@@ -10,9 +10,7 @@ const Headergreen = () => {
   const [searchTerm, setSearchTerm] = useState("");
   // what we actually hand off to GreenProducts (on button-click)
   const [submittedTerm, setSubmittedTerm] = useState("");
-  const [{ basket }] = useStateValue();
-
-  const userName = "Vishal";
+  const [{ basket }] = useStateValue();  const userName = "Vishal";
   const accountTarget = localStorage.getItem("jwtToken")
     ? "/greendashboard"
     : "/login";
